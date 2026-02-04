@@ -1,0 +1,11 @@
+{
+  "page": {
+    "title": "Welcome - Landing Page",
+    "heading": "Welcome!",
+    "description": "Discover something amazing. This is your starting point for an incredible journey.",
+    "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=400&fit=crop",
+    "imageAlt": "Featured image",
+    "buttonText": "Get Started",
+    "buttonUrl": "#"
+  }
+}
