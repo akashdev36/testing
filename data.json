@@ -1,159 +1,159 @@
 {
-    "language": "en",
-    "components": [
-        {
-            "id": 1,
-            "ezuiCms": "body",
-            "content": {
-                "en": "",
-                "hi": ""
-            },
-            "styles": {
-                "fontFamily": "system-ui, -apple-system, sans-serif",
-                "margin": "0",
-                "padding": "0",
-                "minHeight": "100vh",
-                "backgroundColor": "#f9fafb"
-            },
-            "elementType": "div"
-        },
-        {
-            "id": 2,
-            "ezuiCms": "header",
-            "content": {
-                "en": "",
-                "hi": ""
-            },
-            "styles": {
-                "display": "flex",
-                "justifyContent": "space-between",
-                "alignItems": "center",
-                "padding": "20px 40px",
-                "backgroundColor": "#1e3a8a",
-                "color": "#ffffff"
-            },
-            "elementType": "header"
-        },
-        {
-            "id": 3,
-            "ezuiCms": "logo",
-            "content": {
-                "en": "MyCompany",
-                "hi": "मायकंपनी"
-            },
-            "styles": {
-                "fontSize": "24px",
-                "fontWeight": "700",
-                "color": "#ffffff"
-            },
-            "elementType": "div"
-        },
-        {
-            "id": 4,
-            "ezuiCms": "nav-btn",
-            "content": {
-                "en": "Contact Us",
-                "hi": "संपर्क करें"
-            },
-            "styles": {
-                "backgroundColor": "#ffffff",
-                "color": "#1e3a8a",
-                "padding": "10px 24px",
-                "borderRadius": "6px",
-                "border": "none",
-                "fontWeight": "600",
-                "cursor": "pointer"
-            },
-            "elementType": "button"
-        },
-        {
-            "id": 5,
-            "ezuiCms": "hero",
-            "content": {
-                "en": "",
-                "hi": ""
-            },
-            "styles": {
-                "textAlign": "center",
-                "padding": "80px 40px",
-                "backgroundColor": "#ffffff"
-            },
-            "elementType": "section"
-        },
-        {
-            "id": 6,
-            "ezuiCms": "hero-title",
-            "content": {
-                "en": "Welcome to Our Platform",
-                "hi": "हमारे प्लेटफॉर्म में आपका स्वागत है"
-            },
-            "styles": {
-                "fontSize": "48px",
-                "fontWeight": "800",
-                "color": "#111827",
-                "marginBottom": "16px"
-            },
-            "elementType": "h1"
-        },
-        {
-            "id": 7,
-            "ezuiCms": "hero-desc",
-            "content": {
-                "en": "Build something amazing with our tools and services.",
-                "hi": "हमारे टूल्स और सेवाओं के साथ कुछ अद्भुत बनाएं।"
-            },
-            "styles": {
-                "fontSize": "20px",
-                "color": "#6b7280",
-                "marginBottom": "32px"
-            },
-            "elementType": "p"
-        },
-        {
-            "id": 8,
-            "ezuiCms": "cta-btn",
-            "content": {
-                "en": "Get Started",
-                "hi": "शुरू करें"
-            },
-            "styles": {
-                "backgroundColor": "#1e3a8a",
-                "color": "#ffffff",
-                "padding": "16px 40px",
-                "borderRadius": "8px",
-                "border": "none",
-                "fontSize": "18px",
-                "fontWeight": "600",
-                "cursor": "pointer"
-            },
-            "elementType": "button"
-        },
-        {
-            "id": 9,
-            "ezuiCms": "footer",
-            "content": {
-                "en": "",
-                "hi": ""
-            },
-            "styles": {
-                "textAlign": "center",
-                "padding": "24px",
-                "backgroundColor": "#1e3a8a"
-            },
-            "elementType": "footer"
-        },
-        {
-            "id": 10,
-            "ezuiCms": "footer-text",
-            "content": {
-                "en": "© 2024 MyCompany. All rights reserved.",
-                "hi": "© 2024 मायकंपनी। सर्वाधिकार सुरक्षित।"
-            },
-            "styles": {
-                "color": "#ffffff",
-                "fontSize": "14px"
-            },
-            "elementType": "p"
-        }
-    ]
+  "language": "en",
+  "components": [
+    {
+      "id": 1,
+      "ezuiCms": "body",
+      "content": {
+        "en": "",
+        "hi": ""
+      },
+      "styles": {
+        "fontFamily": "system-ui, -apple-system, sans-serif",
+        "margin": "0",
+        "padding": "0",
+        "minHeight": "100vh",
+        "backgroundColor": "#f9fafb"
+      },
+      "elementType": "div"
+    },
+    {
+      "id": 2,
+      "ezuiCms": "header",
+      "content": {
+        "en": "",
+        "hi": ""
+      },
+      "styles": {
+        "display": "flex",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "padding": "20px 40px",
+        "backgroundColor": "#1e3a8a",
+        "color": "#ffffff"
+      },
+      "elementType": "header"
+    },
+    {
+      "id": 3,
+      "ezuiCms": "logo",
+      "content": {
+        "en": "MyCompany",
+        "hi": "à¤®à¤¾à¤¯à¤à¤à¤ªà¤¨à¥"
+      },
+      "styles": {
+        "fontSize": "24px",
+        "fontWeight": "700",
+        "color": "#ffffff"
+      },
+      "elementType": "div"
+    },
+    {
+      "id": 4,
+      "ezuiCms": "nav-btn",
+      "content": {
+        "en": "Contact Us",
+        "hi": "à¤¸à¤à¤ªà¤°à¥à¤ à¤à¤°à¥à¤"
+      },
+      "styles": {
+        "backgroundColor": "#ffffff",
+        "color": "#1e3a8a",
+        "padding": "10px 24px",
+        "borderRadius": "6px",
+        "border": "none",
+        "fontWeight": "600",
+        "cursor": "pointer"
+      },
+      "elementType": "button"
+    },
+    {
+      "id": 5,
+      "ezuiCms": "hero",
+      "content": {
+        "en": "",
+        "hi": ""
+      },
+      "styles": {
+        "textAlign": "center",
+        "padding": "80px 40px",
+        "backgroundColor": "#ffffff"
+      },
+      "elementType": "section"
+    },
+    {
+      "id": 6,
+      "ezuiCms": "hero-title",
+      "content": {
+        "en": "Welcome to visuval editor",
+        "hi": "à¤¹à¤®à¤¾à¤°à¥ à¤ªà¥à¤²à¥à¤à¤«à¥à¤°à¥à¤® à¤®à¥à¤ à¤à¤ªà¤à¤¾ à¤¸à¥à¤µà¤¾à¤à¤¤ à¤¹à¥"
+      },
+      "styles": {
+        "fontSize": "48px",
+        "fontWeight": "800",
+        "color": "#111827",
+        "marginBottom": "16px"
+      },
+      "elementType": "h1"
+    },
+    {
+      "id": 7,
+      "ezuiCms": "hero-desc",
+      "content": {
+        "en": "Build something amazing with our tools and services.",
+        "hi": "à¤¹à¤®à¤¾à¤°à¥ à¤à¥à¤²à¥à¤¸ à¤à¤° à¤¸à¥à¤µà¤¾à¤à¤ à¤à¥ à¤¸à¤¾à¤¥ à¤à¥à¤ à¤à¤¦à¥à¤­à¥à¤¤ à¤¬à¤¨à¤¾à¤à¤à¥¤"
+      },
+      "styles": {
+        "fontSize": "20px",
+        "color": "#6b7280",
+        "marginBottom": "32px"
+      },
+      "elementType": "p"
+    },
+    {
+      "id": 8,
+      "ezuiCms": "cta-btn",
+      "content": {
+        "en": "Get Started",
+        "hi": "à¤¶à¥à¤°à¥ à¤à¤°à¥à¤"
+      },
+      "styles": {
+        "backgroundColor": "#1e3a8a",
+        "color": "#ffffff",
+        "padding": "16px 40px",
+        "borderRadius": "8px",
+        "border": "none",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "cursor": "pointer"
+      },
+      "elementType": "button"
+    },
+    {
+      "id": 9,
+      "ezuiCms": "footer",
+      "content": {
+        "en": "",
+        "hi": ""
+      },
+      "styles": {
+        "textAlign": "center",
+        "padding": "24px",
+        "backgroundColor": "#1e3a8a"
+      },
+      "elementType": "footer"
+    },
+    {
+      "id": 10,
+      "ezuiCms": "footer-text",
+      "content": {
+        "en": "Â© 2024 MyCompany. All rights reserved.",
+        "hi": "Â© 2024 à¤®à¤¾à¤¯à¤à¤à¤ªà¤¨à¥à¥¤ à¤¸à¤°à¥à¤µà¤¾à¤§à¤¿à¤à¤¾à¤° à¤¸à¥à¤°à¤à¥à¤·à¤¿à¤¤à¥¤"
+      },
+      "styles": {
+        "color": "#ffffff",
+        "fontSize": "14px"
+      },
+      "elementType": "p"
+    }
+  ]
 }
