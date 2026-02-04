@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Site</title>
-    <style>* { margin: 0; padding: 0; box-sizing: border-box; }</style>
+    <title>GovInfo Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
+
 <body>
-    <div data-id="1" data-ezui-cms="body">
-        <header data-id="2" data-ezui-cms="header">
-            <div data-id="3" data-ezui-cms="logo"></div>
-            <button data-id="4" data-ezui-cms="nav-btn"></button>
-        </header>
-        <section data-id="5" data-ezui-cms="hero">
-            <h1 data-id="6" data-ezui-cms="hero-title"></h1>
-            <p data-id="7" data-ezui-cms="hero-desc"></p>
-            <button data-id="8" data-ezui-cms="cta-btn"></button>
-        </section>
-        <footer data-id="9" data-ezui-cms="footer">
-            <p data-id="10" data-ezui-cms="footer-text"></p>
-        </footer>
-    </div>
+    <!-- All content and styles will be loaded from data.json by ezui-client.js -->
+    <div id="app"></div>
+
+    <!-- EZUI Client Script - loads content from JSON and enables visual editing -->
     <script src="./ezui-client.js"></script>
 </body>
+
 </html>
