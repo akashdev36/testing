@@ -1,246 +1,267 @@
 {
-  "language": "en",
-  "components": [
-    {
-      "id": 1,
-      "ezuiCms": "landing-container",
-      "content": {
-        "en": "",
-        "hi": ""
-      },
-      "styles": {
-        "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-        "backgroundColor": "#FFFFFF",
-        "color": "#0f172a",
-        "minHeight": "100vh",
-        "display": "flex",
-        "flexDirection": "column",
-        "scrollBehavior": "smooth",
-        "lineHeight": "1.5"
-      },
-      "attributes": {},
-      "elementType": "div"
-    },
-    {
-      "id": 2,
-      "ezuiCms": "header-container",
-      "content": {
-        "en": "",
-        "hi": ""
-      },
-      "styles": {
-        "padding": "1rem 3rem",
-        "backgroundColor": "#FFFFFF",
-        "display": "flex",
-        "flexDirection": "row",
-        "flexWrap": "nowrap",
-        "justifyContent": "space-between",
-        "alignItems": "center",
-        "position": "sticky",
-        "top": "0",
-        "zIndex": "1000",
-        "boxShadow": "0 4px 6px -1px rgba(0,0,0,0.1)",
-        "transition": "all 0.3s ease",
-        "width": "100%"
-      },
-      "attributes": {},
-      "elementType": "header",
-      "children": [2, 9]
-    },
-    {
-      "id": 3,
-      "ezuiCms": "header-logo-icon",
-      "content": {
-        "en": "🏛️",
-        "hi": "🏛️"
-      },
-      "styles": {
-        "fontSize": "1.75rem",
-        "marginRight": "0.75rem",
-        "color": "#1e3a8a"
-      },
-      "attributes": {},
-      "elementType": "span"
-    },
-    {
-      "id": 4,
-      "ezuiCms": "header-logo-text",
-      "content": {
-        "en": "GovInfo Portal",
-        "hi": "गवइन्फो पोर्टल"
-      },
-      "styles": {
-        "fontSize": "1.4rem",
-        "fontWeight": "800",
-        "color": "#1e3a8a",
-        "letterSpacing": "-0.02em"
-      },
-      "attributes": {},
-      "elementType": "span"
-    },
-    {
-      "id": 5,
-      "ezuiCms": "header-nav-link-1",
-      "content": {
-        "en": "Home",
-        "hi": "होम"
-      },
-      "styles": {
-        "color": "#334155",
-        "fontWeight": "600",
-        "textDecoration": "none",
-        "fontSize": "0.95rem"
-      },
-      "attributes": {
-        "href": "#home"
-      },
-      "elementType": "a"
-    },
-    {
-      "id": 6,
-      "ezuiCms": "header-nav-link-2",
-      "content": {
-        "en": "Services",
-        "hi": "सेवाएं"
-      },
-      "styles": {
-        "color": "#334155",
-        "fontWeight": "600",
-        "textDecoration": "none",
-        "fontSize": "0.95rem"
-      },
-      "attributes": {
-        "href": "#features"
-      },
-      "elementType": "a"
-    },
-    {
-      "id": 7,
-      "ezuiCms": "header-nav-link-3",
-      "content": {
-        "en": "About",
-        "hi": "परिचय"
-      },
-      "styles": {
-        "color": "#334155",
-        "fontWeight": "600",
-        "textDecoration": "none",
-        "fontSize": "0.95rem"
-      },
-      "attributes": {
-        "href": "#about"
-      },
-      "elementType": "a"
-    },
-    {
-      "id": 8,
-      "ezuiCms": "header-nav-link-4",
-      "content": {
-        "en": "Contact",
-        "hi": "संपर्क"
-      },
-      "styles": {
-        "color": "#334155",
-        "fontWeight": "600",
-        "textDecoration": "none",
-        "fontSize": "0.95rem"
-      },
-      "attributes": {
-        "href": "#contact"
-      },
-      "elementType": "a"
-    },
-    {
-      "id": 9,
-      "ezuiCms": "header-action-button",
-      "content": {
-        "en": "Citizen Login",
-        "hi": "नागरिक लॉगिन"
-      },
-      "styles": {
-        "backgroundColor": "#1e3a8a",
-        "color": "#FFFFFF",
-        "padding": "0.6rem 1.25rem",
-        "borderRadius": "0.375rem",
-        "fontWeight": "700",
-        "border": "none",
-        "cursor": "pointer",
-        "fontSize": "0.9rem",
-        "whiteSpace": "nowrap"
-      },
-      "attributes": {},
-      "elementType": "button"
-    },
-    {
-      "id": 10,
-      "ezuiCms": "hero-section",
-      "content": {
-        "en": "",
-        "hi": ""
-      },
-      "styles": {
-        "display": "flex",
-        "padding": "4rem 3rem",
-        "alignItems": "center",
-        "gap": "3rem",
-        "background": "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)"
-      },
-      "attributes": {},
-      "elementType": "section"
-    },
-    {
-      "id": 11,
-      "ezuiCms": "hero-heading",
-      "content": {
-        "en": "Welcome to GovInfo Portal",
-        "hi": "गवइन्फो पोर्टल में आपका स्वागत है"
-      },
-      "styles": {
-        "fontSize": "2.5rem",
-        "fontWeight": "800",
-        "color": "#1e3a8a",
-        "marginBottom": "1rem",
-        "lineHeight": "1.2"
-      },
-      "attributes": {},
-      "elementType": "h1"
-    },
-    {
-      "id": 12,
-      "ezuiCms": "hero-description",
-      "content": {
-        "en": "Discover comprehensive government services and information in one place.",
-        "hi": "एक जगह पर व्यापक सरकारी सेवाएं और जानकारी खोजें।"
-      },
-      "styles": {
-        "fontSize": "1.1rem",
-        "color": "#475569",
-        "marginBottom": "2rem",
-        "lineHeight": "1.6"
-      },
-      "attributes": {},
-      "elementType": "p"
-    },
-    {
-      "id": 13,
-      "ezuiCms": "cta-button",
-      "content": {
-        "en": "Get Started",
-        "hi": "शुरुआत करें"
-      },
-      "styles": {
-        "backgroundColor": "#1e3a8a",
-        "color": "#FFFFFF",
-        "padding": "0.75rem 2rem",
-        "borderRadius": "0.375rem",
-        "fontWeight": "700",
-        "border": "none",
-        "cursor": "pointer",
-        "fontSize": "1rem",
-        "transition": "all 0.3s ease"
-      },
-      "attributes": {},
-      "elementType": "button"
-    }
-  ]
+    "language": "en",
+    "components": [
+        {
+            "id": 1,
+            "ezuiCms": "page-container",
+            "content": {
+                "en": "",
+                "hi": ""
+            },
+            "styles": {
+                "fontFamily": "'Segoe UI', sans-serif",
+                "backgroundColor": "#f8fafc",
+                "color": "#1e293b",
+                "minHeight": "100vh",
+                "margin": "0",
+                "padding": "0"
+            },
+            "elementType": "div"
+        },
+        {
+            "id": 2,
+            "ezuiCms": "header",
+            "content": {
+                "en": "",
+                "hi": ""
+            },
+            "styles": {
+                "backgroundColor": "#1e40af",
+                "padding": "1rem 2rem",
+                "display": "flex",
+                "justifyContent": "space-between",
+                "alignItems": "center"
+            },
+            "elementType": "header"
+        },
+        {
+            "id": 3,
+            "ezuiCms": "logo",
+            "content": {
+                "en": "🚀 DemoSite",
+                "hi": "🚀 डेमोसाइट"
+            },
+            "styles": {
+                "fontSize": "1.5rem",
+                "fontWeight": "700",
+                "color": "#ffffff"
+            },
+            "elementType": "div"
+        },
+        {
+            "id": 4,
+            "ezuiCms": "nav-home",
+            "content": {
+                "en": "Home",
+                "hi": "होम"
+            },
+            "styles": {
+                "color": "#ffffff",
+                "marginRight": "1.5rem",
+                "textDecoration": "none"
+            },
+            "elementType": "a"
+        },
+        {
+            "id": 5,
+            "ezuiCms": "nav-about",
+            "content": {
+                "en": "About",
+                "hi": "हमारे बारे में"
+            },
+            "styles": {
+                "color": "#ffffff",
+                "marginRight": "1.5rem",
+                "textDecoration": "none"
+            },
+            "elementType": "a"
+        },
+        {
+            "id": 6,
+            "ezuiCms": "nav-contact",
+            "content": {
+                "en": "Contact",
+                "hi": "संपर्क"
+            },
+            "styles": {
+                "color": "#ffffff",
+                "textDecoration": "none"
+            },
+            "elementType": "a"
+        },
+        {
+            "id": 7,
+            "ezuiCms": "hero-section",
+            "content": {
+                "en": "",
+                "hi": ""
+            },
+            "styles": {
+                "backgroundColor": "#3b82f6",
+                "padding": "4rem 2rem",
+                "textAlign": "center"
+            },
+            "elementType": "section"
+        },
+        {
+            "id": 8,
+            "ezuiCms": "hero-title",
+            "content": {
+                "en": "Welcome to Our Website",
+                "hi": "हमारी वेबसाइट में आपका स्वागत है"
+            },
+            "styles": {
+                "fontSize": "2.5rem",
+                "fontWeight": "800",
+                "color": "#ffffff",
+                "marginBottom": "1rem"
+            },
+            "elementType": "h1"
+        },
+        {
+            "id": 9,
+            "ezuiCms": "hero-subtitle",
+            "content": {
+                "en": "Build amazing things with our platform",
+                "hi": "हमारे प्लेटफॉर्म के साथ अद्भुत चीजें बनाएं"
+            },
+            "styles": {
+                "fontSize": "1.25rem",
+                "color": "#dbeafe",
+                "marginBottom": "2rem"
+            },
+            "elementType": "p"
+        },
+        {
+            "id": 10,
+            "ezuiCms": "cta-button",
+            "content": {
+                "en": "Get Started",
+                "hi": "शुरू करें"
+            },
+            "styles": {
+                "backgroundColor": "#ffffff",
+                "color": "#1e40af",
+                "padding": "0.75rem 2rem",
+                "borderRadius": "0.5rem",
+                "fontWeight": "600",
+                "border": "none",
+                "cursor": "pointer",
+                "fontSize": "1rem"
+            },
+            "elementType": "button"
+        },
+        {
+            "id": 11,
+            "ezuiCms": "features-section",
+            "content": {
+                "en": "",
+                "hi": ""
+            },
+            "styles": {
+                "padding": "3rem 2rem",
+                "backgroundColor": "#ffffff"
+            },
+            "elementType": "section"
+        },
+        {
+            "id": 12,
+            "ezuiCms": "features-title",
+            "content": {
+                "en": "Our Features",
+                "hi": "हमारी विशेषताएं"
+            },
+            "styles": {
+                "fontSize": "2rem",
+                "fontWeight": "700",
+                "color": "#1e40af",
+                "textAlign": "center",
+                "marginBottom": "2rem"
+            },
+            "elementType": "h2"
+        },
+        {
+            "id": 13,
+            "ezuiCms": "feature-1-title",
+            "content": {
+                "en": "⚡ Fast Performance",
+                "hi": "⚡ तेज प्रदर्शन"
+            },
+            "styles": {
+                "fontSize": "1.25rem",
+                "fontWeight": "600",
+                "color": "#1e293b",
+                "marginBottom": "0.5rem"
+            },
+            "elementType": "h3"
+        },
+        {
+            "id": 14,
+            "ezuiCms": "feature-1-desc",
+            "content": {
+                "en": "Lightning fast load times and smooth experience.",
+                "hi": "बिजली की तरह तेज लोड समय और सहज अनुभव।"
+            },
+            "styles": {
+                "color": "#64748b",
+                "fontSize": "0.95rem"
+            },
+            "elementType": "p"
+        },
+        {
+            "id": 15,
+            "ezuiCms": "feature-2-title",
+            "content": {
+                "en": "🔒 Secure",
+                "hi": "🔒 सुरक्षित"
+            },
+            "styles": {
+                "fontSize": "1.25rem",
+                "fontWeight": "600",
+                "color": "#1e293b",
+                "marginBottom": "0.5rem"
+            },
+            "elementType": "h3"
+        },
+        {
+            "id": 16,
+            "ezuiCms": "feature-2-desc",
+            "content": {
+                "en": "Enterprise-grade security for your data.",
+                "hi": "आपके डेटा के लिए एंटरप्राइज-ग्रेड सुरक्षा।"
+            },
+            "styles": {
+                "color": "#64748b",
+                "fontSize": "0.95rem"
+            },
+            "elementType": "p"
+        },
+        {
+            "id": 17,
+            "ezuiCms": "footer",
+            "content": {
+                "en": "",
+                "hi": ""
+            },
+            "styles": {
+                "backgroundColor": "#1e293b",
+                "padding": "2rem",
+                "textAlign": "center"
+            },
+            "elementType": "footer"
+        },
+        {
+            "id": 18,
+            "ezuiCms": "footer-text",
+            "content": {
+                "en": "© 2024 DemoSite. All rights reserved.",
+                "hi": "© 2024 डेमोसाइट। सर्वाधिकार सुरक्षित।"
+            },
+            "styles": {
+                "color": "#94a3b8",
+                "fontSize": "0.9rem"
+            },
+            "elementType": "p"
+        }
+    ]
 }
