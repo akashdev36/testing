@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <!-- Structure only - content & styles from data.json -->
+    <!-- Structure - content & styles applied by script below -->
     <div data-id="1" data-ezui-cms="body">
         <header data-id="2" data-ezui-cms="header">
             <div data-id="3" data-ezui-cms="logo"></div>
@@ -30,7 +30,112 @@
             <p data-id="10" data-ezui-cms="footer-text"></p>
         </footer>
     </div>
-    <script src="./ezui-client.js"></script>
+
+    <!-- Embedded data (same as data.json) -->
+    <script id="cms-data" type="application/json">
+    {
+      "language": "en",
+      "components": [
+        {"id": 1, "ezuiCms": "body", "content": {"en": ""}, "styles": {"fontFamily": "system-ui, sans-serif", "margin": "0", "padding": "0", "minHeight": "100vh", "backgroundColor": "#f9fafb"}},
+        {"id": 2, "ezuiCms": "header", "content": {"en": ""}, "styles": {"display": "flex", "justifyContent": "space-between", "alignItems": "center", "padding": "20px 40px", "backgroundColor": "#1e3a8a"}},
+        {"id": 3, "ezuiCms": "logo", "content": {"en": "MyCompany", "hi": "मायकंपनी"}, "styles": {"fontSize": "24px", "fontWeight": "700", "color": "#ffffff"}},
+        {"id": 4, "ezuiCms": "nav-btn", "content": {"en": "Contact Us", "hi": "संपर्क करें"}, "styles": {"backgroundColor": "#ffffff", "color": "#1e3a8a", "padding": "10px 24px", "borderRadius": "6px", "border": "none", "fontWeight": "600", "cursor": "pointer"}},
+        {"id": 5, "ezuiCms": "hero", "content": {"en": ""}, "styles": {"textAlign": "center", "padding": "80px 40px", "backgroundColor": "#ffffff"}},
+        {"id": 6, "ezuiCms": "hero-title", "content": {"en": "Welcome to Our Platform", "hi": "हमारे प्लेटफॉर्म में आपका स्वागत है"}, "styles": {"fontSize": "48px", "fontWeight": "800", "color": "#111827", "marginBottom": "16px"}},
+        {"id": 7, "ezuiCms": "hero-desc", "content": {"en": "Build something amazing with our tools and services.", "hi": "हमारे टूल्स और सेवाओं के साथ कुछ अद्भुत बनाएं।"}, "styles": {"fontSize": "20px", "color": "#6b7280", "marginBottom": "32px"}},
+        {"id": 8, "ezuiCms": "cta-btn", "content": {"en": "Get Started", "hi": "शुरू करें"}, "styles": {"backgroundColor": "#1e3a8a", "color": "#ffffff", "padding": "16px 40px", "borderRadius": "8px", "border": "none", "fontSize": "18px", "fontWeight": "600", "cursor": "pointer"}},
+        {"id": 9, "ezuiCms": "footer", "content": {"en": ""}, "styles": {"textAlign": "center", "padding": "24px", "backgroundColor": "#1e3a8a"}},
+        {"id": 10, "ezuiCms": "footer-text", "content": {"en": "© 2024 MyCompany. All rights reserved.", "hi": "© 2024 मायकंपनी। सर्वाधिकार सुरक्षित।"}, "styles": {"color": "#ffffff", "fontSize": "14px"}}
+      ]
+    }
+    </script>
+
+    <script>
+        // Simple inline script to apply content and styles
+        (function () {
+            const isInIframe = window.self !== window.top;
+            let data;
+
+            // Try to load from embedded data first, then fetch
+            async function init() {
+                const embeddedData = document.getElementById('cms-data');
+                if (embeddedData) {
+                    data = JSON.parse(embeddedData.textContent);
+                } else {
+                    try {
+                        const response = await fetch('./data.json');
+                        data = await response.json();
+                    } catch (e) {
+                        console.error('Could not load data');
+                        return;
+                    }
+                }
+
+                applyData();
+                if (isInIframe) enableEditMode();
+            }
+
+            function applyData() {
+                const lang = data.language || 'en';
+                data.components.forEach(comp => {
+                    const el = document.querySelector(`[data-id="${comp.id}"]`);
+                    if (!el) return;
+
+                    // Apply styles
+                    if (comp.styles) {
+                        Object.entries(comp.styles).forEach(([k, v]) => el.style[k] = v);
+                    }
+
+                    // Apply content (only if no child data-id elements)
+                    if (comp.content && comp.content[lang] && !el.querySelector('[data-id]')) {
+                        el.textContent = comp.content[lang];
+                    }
+                });
+            }
+
+            function enableEditMode() {
+                const style = document.createElement('style');
+                style.textContent = `
+                [data-id]:hover { outline: 2px dashed #8B5CF6 !important; outline-offset: 2px; cursor: pointer; }
+                [data-id].selected { outline: 3px solid #3B82F6 !important; outline-offset: 2px; }
+            `;
+                document.head.appendChild(style);
+
+                document.addEventListener('click', function (e) {
+                    let el = e.target;
+                    while (el && !el.dataset?.id) el = el.parentElement;
+                    if (!el) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    document.querySelectorAll('.selected').forEach(s => s.classList.remove('selected'));
+                    el.classList.add('selected');
+
+                    window.parent.postMessage({
+                        source: 'ezui-cms',
+                        type: 'element-selected',
+                        data: { id: parseInt(el.dataset.id), ezuiCms: el.dataset.ezuiCms || '', textContent: el.textContent }
+                    }, '*');
+                }, true);
+
+                window.addEventListener('message', function (e) {
+                    if (e.data?.source !== 'visual-editor') return;
+                    const el = document.querySelector(`[data-id="${e.data.data.id}"]`);
+                    if (!el) return;
+                    if (e.data.type === 'update-content') el.textContent = e.data.data.content;
+                    if (e.data.type === 'update-style') el.style[e.data.data.styleKey] = e.data.data.value;
+                    if (e.data.type === 'highlight') {
+                        document.querySelectorAll('.selected').forEach(s => s.classList.remove('selected'));
+                        el.classList.add('selected');
+                    }
+                });
+
+                window.parent.postMessage({ source: 'ezui-cms', type: 'ezui-ready', data: {} }, '*');
+            }
+
+            init();
+        })();
+    </script>
 </body>
 
 </html>
