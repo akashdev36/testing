@@ -1,178 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GovInfo Portal</title>
+    <title>Demo Site</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-        }
-
-        .language-switcher {
-            display: flex;
-            gap: 0.5rem;
-            margin-left: auto;
-            padding: 1rem;
-            position: fixed;
-            top: 0;
-            right: 0;
-            z-index: 2000;
-        }
-
-        .lang-btn {
-            padding: 0.5rem 1rem;
-            border: 1px solid #1e3a8a;
-            background: white;
-            color: #1e3a8a;
-            cursor: pointer;
-            border-radius: 0.25rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .lang-btn.active {
-            background: #1e3a8a;
-            color: white;
-        }
-
-        .lang-btn:hover {
-            background: #1e3a8a;
-            color: white;
-        }
-
-        #app {
-            width: 100%;
-        }
     </style>
 </head>
+
 <body>
-    <div class="language-switcher">
-        <button class="lang-btn active" data-lang="en">English</button>
-        <button class="lang-btn" data-lang="hi">Hindi</button>
+    <!-- Structure only - content & styles from data.json -->
+    <div data-id="1" data-ezui-cms="body">
+        <header data-id="2" data-ezui-cms="header">
+            <div data-id="3" data-ezui-cms="logo"></div>
+            <button data-id="4" data-ezui-cms="nav-btn"></button>
+        </header>
+        <section data-id="5" data-ezui-cms="hero">
+            <h1 data-id="6" data-ezui-cms="hero-title"></h1>
+            <p data-id="7" data-ezui-cms="hero-desc"></p>
+            <button data-id="8" data-ezui-cms="cta-btn"></button>
+        </section>
+        <footer data-id="9" data-ezui-cms="footer">
+            <p data-id="10" data-ezui-cms="footer-text"></p>
+        </footer>
     </div>
-
-    <div id="app"></div>
-
-    <script>
-        let pageData = null;
-        let currentLanguage = 'en';
-
-        // Fetch JSON data
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                pageData = data;
-                currentLanguage = pageData.language || 'en';
-                renderPage();
-                setupLanguageSwitcher();
-            })
-            .catch(error => console.error('Error loading data:', error));
-
-        // Render page from JSON
-        function renderPage() {
-            const app = document.getElementById('app');
-            app.innerHTML = '';
-
-            const componentMap = {};
-            pageData.components.forEach(comp => {
-                componentMap[comp.id] = comp;
-            });
-
-            // Find root components (those not referenced as children)
-            const referencedIds = new Set();
-            pageData.components.forEach(comp => {
-                if (comp.children) {
-                    comp.children.forEach(childId => referencedIds.add(childId));
-                }
-            });
-
-            const rootComponents = pageData.components.filter(comp => !referencedIds.has(comp.id));
-
-            // Render each root component
-            rootComponents.forEach(component => {
-                const element = createElementFromComponent(component, componentMap);
-                app.appendChild(element);
-            });
-        }
-
-        // Create element from component definition
-        function createElementFromComponent(component, componentMap) {
-            const element = document.createElement(component.elementType);
-            element.id = `comp-${component.id}`;
-            element.setAttribute('data-ezui', component.ezuiCms);
-
-            // Set content
-            if (component.content && component.content[currentLanguage]) {
-                element.textContent = component.content[currentLanguage];
-            }
-
-            // Apply styles
-            if (component.styles) {
-                Object.keys(component.styles).forEach(styleKey => {
-                    const cssKey = convertToCamelCase(styleKey);
-                    element.style[cssKey] = component.styles[styleKey];
-                });
-            }
-
-            // Set attributes
-            if (component.attributes) {
-                Object.keys(component.attributes).forEach(attrKey => {
-                    element.setAttribute(attrKey, component.attributes[attrKey]);
-                });
-            }
-
-            // Add children if specified
-            if (component.children && componentMap) {
-                component.children.forEach(childId => {
-                    const childComponent = componentMap[childId];
-                    if (childComponent) {
-                        const childElement = createElementFromComponent(childComponent, componentMap);
-                        element.appendChild(childElement);
-                    }
-                });
-            }
-
-            return element;
-        }
-
-        // Convert camelCase to CSS property names
-        function convertToCamelCase(str) {
-            return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
-        }
-
-        // Setup language switcher
-        function setupLanguageSwitcher() {
-            const langBtns = document.querySelectorAll('.lang-btn');
-            langBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    currentLanguage = e.target.dataset.lang;
-                    
-                    // Update active button
-                    langBtns.forEach(b => b.classList.remove('active'));
-                    e.target.classList.add('active');
-                    
-                    // Re-render page
-                    renderPage();
-                });
-            });
-        }
-    </script>
+    <script src="./ezui-client.js"></script>
 </body>
+
+</html>

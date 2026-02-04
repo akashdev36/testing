@@ -3,18 +3,17 @@
     "components": [
         {
             "id": 1,
-            "ezuiCms": "page-container",
+            "ezuiCms": "body",
             "content": {
                 "en": "",
                 "hi": ""
             },
             "styles": {
-                "fontFamily": "'Segoe UI', sans-serif",
-                "backgroundColor": "#f8fafc",
-                "color": "#1e293b",
-                "minHeight": "100vh",
+                "fontFamily": "system-ui, -apple-system, sans-serif",
                 "margin": "0",
-                "padding": "0"
+                "padding": "0",
+                "minHeight": "100vh",
+                "backgroundColor": "#f9fafb"
             },
             "elementType": "div"
         },
@@ -26,11 +25,12 @@
                 "hi": ""
             },
             "styles": {
-                "backgroundColor": "#1e40af",
-                "padding": "1rem 2rem",
                 "display": "flex",
                 "justifyContent": "space-between",
-                "alignItems": "center"
+                "alignItems": "center",
+                "padding": "20px 40px",
+                "backgroundColor": "#1e3a8a",
+                "color": "#ffffff"
             },
             "elementType": "header"
         },
@@ -38,11 +38,11 @@
             "id": 3,
             "ezuiCms": "logo",
             "content": {
-                "en": "🚀 DemoSite",
-                "hi": "🚀 डेमोसाइट"
+                "en": "MyCompany",
+                "hi": "मायकंपनी"
             },
             "styles": {
-                "fontSize": "1.5rem",
+                "fontSize": "24px",
                 "fontWeight": "700",
                 "color": "#ffffff"
             },
@@ -50,216 +50,108 @@
         },
         {
             "id": 4,
-            "ezuiCms": "nav-home",
+            "ezuiCms": "nav-btn",
             "content": {
-                "en": "Home",
-                "hi": "होम"
-            },
-            "styles": {
-                "color": "#ffffff",
-                "marginRight": "1.5rem",
-                "textDecoration": "none"
-            },
-            "elementType": "a"
-        },
-        {
-            "id": 5,
-            "ezuiCms": "nav-about",
-            "content": {
-                "en": "About",
-                "hi": "हमारे बारे में"
-            },
-            "styles": {
-                "color": "#ffffff",
-                "marginRight": "1.5rem",
-                "textDecoration": "none"
-            },
-            "elementType": "a"
-        },
-        {
-            "id": 6,
-            "ezuiCms": "nav-contact",
-            "content": {
-                "en": "Contact",
-                "hi": "संपर्क"
-            },
-            "styles": {
-                "color": "#ffffff",
-                "textDecoration": "none"
-            },
-            "elementType": "a"
-        },
-        {
-            "id": 7,
-            "ezuiCms": "hero-section",
-            "content": {
-                "en": "",
-                "hi": ""
-            },
-            "styles": {
-                "backgroundColor": "#3b82f6",
-                "padding": "4rem 2rem",
-                "textAlign": "center"
-            },
-            "elementType": "section"
-        },
-        {
-            "id": 8,
-            "ezuiCms": "hero-title",
-            "content": {
-                "en": "Welcome to Our Website",
-                "hi": "हमारी वेबसाइट में आपका स्वागत है"
-            },
-            "styles": {
-                "fontSize": "2.5rem",
-                "fontWeight": "800",
-                "color": "#ffffff",
-                "marginBottom": "1rem"
-            },
-            "elementType": "h1"
-        },
-        {
-            "id": 9,
-            "ezuiCms": "hero-subtitle",
-            "content": {
-                "en": "Build amazing things with our platform",
-                "hi": "हमारे प्लेटफॉर्म के साथ अद्भुत चीजें बनाएं"
-            },
-            "styles": {
-                "fontSize": "1.25rem",
-                "color": "#dbeafe",
-                "marginBottom": "2rem"
-            },
-            "elementType": "p"
-        },
-        {
-            "id": 10,
-            "ezuiCms": "cta-button",
-            "content": {
-                "en": "Get Started",
-                "hi": "शुरू करें"
+                "en": "Contact Us",
+                "hi": "संपर्क करें"
             },
             "styles": {
                 "backgroundColor": "#ffffff",
-                "color": "#1e40af",
-                "padding": "0.75rem 2rem",
-                "borderRadius": "0.5rem",
-                "fontWeight": "600",
+                "color": "#1e3a8a",
+                "padding": "10px 24px",
+                "borderRadius": "6px",
                 "border": "none",
-                "cursor": "pointer",
-                "fontSize": "1rem"
+                "fontWeight": "600",
+                "cursor": "pointer"
             },
             "elementType": "button"
         },
         {
-            "id": 11,
-            "ezuiCms": "features-section",
+            "id": 5,
+            "ezuiCms": "hero",
             "content": {
                 "en": "",
                 "hi": ""
             },
             "styles": {
-                "padding": "3rem 2rem",
+                "textAlign": "center",
+                "padding": "80px 40px",
                 "backgroundColor": "#ffffff"
             },
             "elementType": "section"
         },
         {
-            "id": 12,
-            "ezuiCms": "features-title",
+            "id": 6,
+            "ezuiCms": "hero-title",
             "content": {
-                "en": "Our Features",
-                "hi": "हमारी विशेषताएं"
+                "en": "Welcome to Our Platform",
+                "hi": "हमारे प्लेटफॉर्म में आपका स्वागत है"
             },
             "styles": {
-                "fontSize": "2rem",
-                "fontWeight": "700",
-                "color": "#1e40af",
-                "textAlign": "center",
-                "marginBottom": "2rem"
+                "fontSize": "48px",
+                "fontWeight": "800",
+                "color": "#111827",
+                "marginBottom": "16px"
             },
-            "elementType": "h2"
+            "elementType": "h1"
         },
         {
-            "id": 13,
-            "ezuiCms": "feature-1-title",
+            "id": 7,
+            "ezuiCms": "hero-desc",
             "content": {
-                "en": "⚡ Fast Performance",
-                "hi": "⚡ तेज प्रदर्शन"
+                "en": "Build something amazing with our tools and services.",
+                "hi": "हमारे टूल्स और सेवाओं के साथ कुछ अद्भुत बनाएं।"
             },
             "styles": {
-                "fontSize": "1.25rem",
-                "fontWeight": "600",
-                "color": "#1e293b",
-                "marginBottom": "0.5rem"
-            },
-            "elementType": "h3"
-        },
-        {
-            "id": 14,
-            "ezuiCms": "feature-1-desc",
-            "content": {
-                "en": "Lightning fast load times and smooth experience.",
-                "hi": "बिजली की तरह तेज लोड समय और सहज अनुभव।"
-            },
-            "styles": {
-                "color": "#64748b",
-                "fontSize": "0.95rem"
+                "fontSize": "20px",
+                "color": "#6b7280",
+                "marginBottom": "32px"
             },
             "elementType": "p"
         },
         {
-            "id": 15,
-            "ezuiCms": "feature-2-title",
+            "id": 8,
+            "ezuiCms": "cta-btn",
             "content": {
-                "en": "🔒 Secure",
-                "hi": "🔒 सुरक्षित"
+                "en": "Get Started",
+                "hi": "शुरू करें"
             },
             "styles": {
-                "fontSize": "1.25rem",
+                "backgroundColor": "#1e3a8a",
+                "color": "#ffffff",
+                "padding": "16px 40px",
+                "borderRadius": "8px",
+                "border": "none",
+                "fontSize": "18px",
                 "fontWeight": "600",
-                "color": "#1e293b",
-                "marginBottom": "0.5rem"
+                "cursor": "pointer"
             },
-            "elementType": "h3"
+            "elementType": "button"
         },
         {
-            "id": 16,
-            "ezuiCms": "feature-2-desc",
-            "content": {
-                "en": "Enterprise-grade security for your data.",
-                "hi": "आपके डेटा के लिए एंटरप्राइज-ग्रेड सुरक्षा।"
-            },
-            "styles": {
-                "color": "#64748b",
-                "fontSize": "0.95rem"
-            },
-            "elementType": "p"
-        },
-        {
-            "id": 17,
+            "id": 9,
             "ezuiCms": "footer",
             "content": {
                 "en": "",
                 "hi": ""
             },
             "styles": {
-                "backgroundColor": "#1e293b",
-                "padding": "2rem",
-                "textAlign": "center"
+                "textAlign": "center",
+                "padding": "24px",
+                "backgroundColor": "#1e3a8a"
             },
             "elementType": "footer"
         },
         {
-            "id": 18,
+            "id": 10,
             "ezuiCms": "footer-text",
             "content": {
-                "en": "© 2024 DemoSite. All rights reserved.",
-                "hi": "© 2024 डेमोसाइट। सर्वाधिकार सुरक्षित।"
+                "en": "© 2024 MyCompany. All rights reserved.",
+                "hi": "© 2024 मायकंपनी। सर्वाधिकार सुरक्षित।"
             },
             "styles": {
-                "color": "#94a3b8",
-                "fontSize": "0.9rem"
+                "color": "#ffffff",
+                "fontSize": "14px"
             },
             "elementType": "p"
         }
