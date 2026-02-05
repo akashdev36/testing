@@ -1,7 +1,6 @@
 /**
  * EZUI Client Script - Dynamic DOM Builder
  * Builds entire page from data.json
- * Enables: reordering, adding, deleting components
  */
 
 (function () {
@@ -20,9 +19,18 @@
             const response = await fetch('./data.json');
             componentsData = await response.json();
             currentLang = componentsData.language || 'en';
+            console.log('[EZUI] Loaded data:', componentsData);
         } catch (err) {
             console.error('[EZUI] Failed to load data.json:', err);
-            document.getElementById('root').innerHTML = '<p style="padding:20px;color:red;">Error loading data.json</p>';
+            const root = document.getElementById('root');
+            if (root) {
+                root.innerHTML = '<div style="padding:20px;color:red;font-family:sans-serif;">Error loading data.json</div>';
+            }
+            return;
+        }
+
+        if (!componentsData.components || componentsData.components.length === 0) {
+            console.error('[EZUI] No components in data.json');
             return;
         }
 
@@ -40,27 +48,38 @@
     // Build entire DOM from JSON
     function buildDOM() {
         const root = document.getElementById('root');
-        if (!root) return;
+        if (!root) {
+            console.error('[EZUI] #root element not found!');
+            return;
+        }
 
         // Clear existing content
         root.innerHTML = '';
 
         // Find root component (parentId: null)
-        const rootComponent = componentsData.components.find(c => c.parentId === null);
+        const rootComponent = componentsData.components.find(c => c.parentId === null || c.parentId === undefined);
         if (!rootComponent) {
-            console.error('[EZUI] No root component found (parentId: null)');
+            console.error('[EZUI] No root component found (parentId should be null)');
+            root.innerHTML = '<div style="padding:20px;">No root component in JSON</div>';
             return;
         }
+
+        console.log('[EZUI] Building from root component:', rootComponent);
 
         // Recursively build elements
         const rootElement = buildElement(rootComponent);
         if (rootElement) {
             root.appendChild(rootElement);
+            console.log('[EZUI] DOM built successfully, root element:', rootElement);
+        } else {
+            console.error('[EZUI] Failed to build root element');
         }
     }
 
     // Build single element and its children
     function buildElement(component) {
+        if (!component) return null;
+
         // Create element
         const el = document.createElement(component.elementType || 'div');
 
@@ -200,22 +219,12 @@
             case 'clear-highlight':
                 clearHighlight();
                 break;
-            case 'reorder':
-                reorderComponent(data.id, data.newOrder);
-                break;
-            case 'add-component':
-                addComponent(data);
-                break;
-            case 'delete-component':
-                deleteComponent(data.id);
-                break;
             case 'rebuild':
-                // Rebuild entire DOM (after major changes)
+                // Rebuild entire DOM (after major changes like reorder/add/delete)
                 if (data.components) {
                     componentsData.components = data.components;
                 }
                 buildDOM();
-                enableEditModeStyles();
                 break;
         }
     }
@@ -251,49 +260,7 @@
         document.querySelectorAll('.ezui-selected').forEach(s => s.classList.remove('ezui-selected'));
     }
 
-    // Reorder component (change its order within parent)
-    function reorderComponent(id, newOrder) {
-        const comp = componentsData.components.find(c => c.id === id);
-        if (!comp) return;
-
-        comp.order = newOrder;
-        buildDOM();
-        enableEditModeStyles();
-    }
-
-    // Add new component
-    function addComponent(newComp) {
-        componentsData.components.push(newComp);
-        buildDOM();
-        enableEditModeStyles();
-    }
-
-    // Delete component
-    function deleteComponent(id) {
-        // Remove component and all its children
-        const idsToRemove = [id];
-        const findChildren = (parentId) => {
-            componentsData.components
-                .filter(c => c.parentId === parentId)
-                .forEach(c => {
-                    idsToRemove.push(c.id);
-                    findChildren(c.id);
-                });
-        };
-        findChildren(id);
-
-        componentsData.components = componentsData.components.filter(c => !idsToRemove.includes(c.id));
-        buildDOM();
-        enableEditModeStyles();
-    }
-
-    // Re-enable edit mode styles after rebuild
-    function enableEditModeStyles() {
-        if (!isInIframe) return;
-        // Styles are already in head, just need to re-attach handlers
-    }
-
-    // Start
+    // Start when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
