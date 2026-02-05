@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GovInfo Portal</title>
+    <title>Demo Site</title>
     <style>
         * {
             margin: 0;
@@ -15,11 +15,11 @@
 </head>
 
 <body>
-    <!-- All content and styles will be loaded from data.json by ezui-client.js -->
-    <div id="app"></div>
+    <!-- Root container - built dynamically from data.json -->
+    <div id="root"></div>
 
-    <!-- EZUI Client Script - loads content from JSON and enables visual editing -->
-    <script src="./ezui-client.js"></script>
+    <!-- Load script at the end to ensure DOM is ready -->
+    <script src="./ezui-client.js" defer></script>
 </body>
 
 </html>
