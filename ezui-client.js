@@ -1,6 +1,6 @@
 /**
  * EZUI Client Script - Dynamic DOM Builder
- * Builds entire page from data.json
+ * Builds entire page from ezui.json
  */
 
 (function () {
@@ -14,23 +14,23 @@
     async function init() {
         console.log('[EZUI] Initializing dynamic DOM builder...');
 
-        // Load data.json
+        // Load ezui.json
         try {
-            const response = await fetch('./data.json');
+            const response = await fetch('./ezui.json');
             componentsData = await response.json();
             currentLang = componentsData.language || 'en';
             console.log('[EZUI] Loaded data:', componentsData);
         } catch (err) {
-            console.error('[EZUI] Failed to load data.json:', err);
+            console.error('[EZUI] Failed to load ezui.json:', err);
             const root = document.getElementById('root');
             if (root) {
-                root.innerHTML = '<div style="padding:20px;color:red;font-family:sans-serif;">Error loading data.json</div>';
+                root.innerHTML = '<div style="padding:20px;color:red;font-family:sans-serif;">Error loading ezui.json</div>';
             }
             return;
         }
 
         if (!componentsData.components || componentsData.components.length === 0) {
-            console.error('[EZUI] No components in data.json');
+            console.error('[EZUI] No components in ezui.json');
             return;
         }
 
